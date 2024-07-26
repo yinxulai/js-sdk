@@ -84,7 +84,7 @@ struct Index {
 
   uploadFileState(task: UploadTask) {
     this.task = task
-    // task.onProgress(progress => this.progress = progress)
+    task.onProgress(progress => console.log(String(progress.percent)))
     task.onComplete(result => this.result = result)
     task.onError(error => this.error = error?.message)
   }
